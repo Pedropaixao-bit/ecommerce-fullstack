@@ -1,0 +1,119 @@
+====================================================
+COMO SUBIR SEU PROJETO E-COMMERCE PARA O GITHUB
+====================================================
+
+PASSO 1: INSTALAR GIT
+---------------------
+- Git ja foi instalado automaticamente!
+
+
+PASSO 2: ABRIR O GIT BASH OU POWERSHELL
+----------------------------------------
+1. Pressione SHIFT + BOTAO DIREITO DO MOUSE na pasta E-COMMERCE
+2. Clique em "Abrir terminal aqui" ou "Git Bash Here"
+
+
+PASSO 3: CONFIGURAR SEU NOME E EMAIL (APENAS UMA VEZ)
+------------------------------------------------------
+Execute estes comandos (substitua com seus dados):
+
+git config --global user.name "Seu Nome Completo"
+git config --global user.email "seu-email@gmail.com"
+
+
+PASSO 4: INICIALIZAR O GIT
+---------------------------
+Execute os seguintes comandos UM POR VEZ:
+
+git init
+
+git add .
+
+git commit -m "Primeira versao do projeto E-Commerce"
+
+
+PASSO 5: CRIAR REPOSITORIO NO GITHUB
+-------------------------------------
+1. Vá para: https://github.com/new
+2. Escolha um nome (ex: ecommerce-fullstack)
+3. NÃO marque a opcao "Initialize this repository with a README"
+4. Clique em "Create repository"
+
+
+PASSO 6: CONECTAR AO GITHUB
+----------------------------
+1. No site do GitHub, copie a URL do repositorio
+   (Algo como: https://github.com/seu-usuario/ecommerce-fullstack.git)
+
+2. Execute estes comandos (substitua com SUA URL):
+
+git remote add origin COLE_A_URL_AQUI
+
+git branch -M main
+
+git push -u origin main
+
+
+PASSO 7: AUTENTICAR NO GITHUB
+------------------------------
+Quando pedir login:
+- Usuario: seu usuario do GitHub
+- Senha: NÃO use sua senha normal!
+
+  Use um PERSONAL ACCESS TOKEN:
+  1. Vá para: https://github.com/settings/tokens
+  2. Clique em "Generate new token" > "Generate new token (classic)"
+  3. Dê um nome: "Meu Computador"
+  4. Marque a opcao: repo (todas)
+  5. Clique em "Generate token"
+  6. COPIE o token que aparece
+  7. Use este token como SENHA
+
+PRONTO! Seu codigo esta no GitHub!
+
+
+====================================================
+COMANDOS PARA USAR DEPOIS
+====================================================
+
+Para atualizar o repositorio:
+git add .
+git commit -m "Descricao das mudancas"
+git push
+
+Para ver status:
+git status
+
+Para ver historico:
+git log
+
+
+====================================================
+PROBLEMAS COMUNS
+====================================================
+
+"fatal: not a git repository"
+- Voce nao esta na pasta certa
+- Use: cd para voltar para a pasta E-COMMERCE
+
+"Authentication failed"
+- Voce nao usou o Personal Access Token corretamente
+- Volte ao PASSO 7
+
+"Updates were rejected"
+- Execute: git pull origin main --rebase
+- Depois: git push
+
+
+====================================================
+AJUDA
+====================================================
+- Leia o arquivo: GITHUB-SETUP.md
+- Documentacao: https://git-scm.com/doc
+- GitHub Docs: https://docs.github.com/pt
+
+
+====================================================
+BOM TRABALHO! Seu projeto esta quase no ar!
+====================================================
+
