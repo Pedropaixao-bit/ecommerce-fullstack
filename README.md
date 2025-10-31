@@ -2,7 +2,7 @@
 
 API completa para e-commerce desenvolvida com **FastAPI** e **MySQL/XAMPP**, incluindo autenticação JWT, CRUD de produtos, carrinho de compras e sistema de pedidos.
 
-## 🚀 Funcionalidades
+##  Funcionalidades
 
 - ✅ **Autenticação JWT** (login/cadastro)
 - ✅ **CRUD de Produtos** e Categorias
@@ -215,5 +215,5 @@ git push -u origin main
 
 ---
 
-**Desenvolvido com ❤️ usando FastAPI + MySQL**
+**Desenvolvido com usando FastAPI + MySQL**
 
