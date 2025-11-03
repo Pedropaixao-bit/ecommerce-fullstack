@@ -18,17 +18,17 @@ import os
 from decimal import Decimal
 
 # Configurações
-SECRET_KEY = "your-secret-key-change-in-production"
+SECRET_KEY = os.getenv("SECRET_KEY", "your-secret-key-change-in-production")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
-# Configurações do banco de dados MySQL/XAMPP
+# Configurações do banco de dados MySQL
 DB_CONFIG = {
-    'host': 'localhost',
-    'port': 3306,
-    'user': 'root',
-    'password': '',  # Senha padrão do XAMPP é vazia
-    'database': 'ecommerce_db',
+    'host': os.getenv('DB_HOST', 'localhost'),
+    'port': int(os.getenv('DB_PORT', '3306')),
+    'user': os.getenv('DB_USER', 'root'),
+    'password': os.getenv('DB_PASSWORD', ''),
+    'database': os.getenv('DB_NAME', 'ecommerce_db'),
     'charset': 'utf8mb4'
 }
 
@@ -153,9 +153,7 @@ def init_database():
     try:
         cursor = connection.cursor()
         
-        # Criar banco de dados se não existir
-        cursor.execute("CREATE DATABASE IF NOT EXISTS ecommerce_db")
-        cursor.execute("USE ecommerce_db")
+        # Usar apenas o banco já configurado em DB_CONFIG; não criar database aqui
         
         # Criar tabelas
         tables = [
@@ -766,3 +764,4 @@ if __name__ == "__main__":
     print("📖 Documentação disponível em: http://localhost:8000/docs")
     print("🔍 Health check em: http://localhost:8000/health")
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
